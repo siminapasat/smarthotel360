@@ -1,6 +1,8 @@
 # SmartHotel360
 
-We are happy to release of SmartHotel360 iOS Swift. This release intends to share a simplified version of SmartHotel360 reference sample app used at Microsoft Build 2018.
+We are happy to release of SmartHotel360 iOS Swift. This release intends to share a simplified version of SmartHotel360 reference sample app used at Microsoft Build 2018. 
+
+SmartHotel360 is a fictitious smart hospitality company showcasing the future of connected travel.
 
 # SmartHotel360 Repos
 For this reference app scenario, we built several consumer and line-of-business apps and an Azure backend. You can find all SmartHotel360 repos in the following locations:
@@ -17,5 +19,8 @@ You can also download the mobile app connected to our public endpoints in your d
 * [SmartHotel360 iOS Client App](https://aka.ms/smarthotel360ios)
 
 **Note:** This document is about an iOS Swift app using **App Center**.
+
+
+
 
 
