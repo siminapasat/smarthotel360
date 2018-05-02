@@ -4,7 +4,7 @@
 //
 //  Created by David Sanchez on 4/23/18.
 //  Copyright © 2018 SwiftSmartHotel360. All rights reserved.
-// :) 
+//
 
 import UIKit
 
