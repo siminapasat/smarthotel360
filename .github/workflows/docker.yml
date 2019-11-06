@@ -1,0 +1,26 @@
+name: Publish Docker image
+
+on:
+  push:
+    branches:
+    - master
+    paths:
+    - 'docker-public/*'
+    - '.github/workflows/docker.yml'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Build and tag image
+      run: docker build -t "docker.pkg.github.com/$GITHUB_REPOSITORY/docker-public:$GITHUB_SHA" -f docker-public/Dockerfile .
+
+    - name: Docker login
+      run: echo ${{ secrets.GITHUB_TOKEN }} | docker login docker.pkg.github.com -u $GITHUB_ACTOR --password-stdin
+
+    - name: Publish to GPR
+      run: docker push "docker.pkg.github.com/$GITHUB_REPOSITORY/docker-public:$GITHUB_SHA"
