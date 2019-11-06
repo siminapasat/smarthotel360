@@ -1,0 +1,23 @@
+name: Install Docker image
+
+on:
+  push:
+    branches:
+    - master
+    paths:
+    - 'docker-install/*'
+    - '.github/workflows/docker-install.yml'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Docker login
+      run: echo ${{ secrets.GITHUB_TOKEN }} | docker login docker.pkg.github.com -u $GITHUB_ACTOR --password-stdin
+
+    - name: Install image
+      run: docker pull docker.pkg.github.com/siminapasat/smarthotel360/docker-public:e87db1ed4ef11675828bbd5b7cc0b544e046828c
